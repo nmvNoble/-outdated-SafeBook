@@ -49,7 +49,6 @@ if(isset($_SESSION["uid"])){
 							<div class="panel-heading">
 								<div class="row">
 									<div class="col-md-3">Sl.No</div>
-									<div class="col-md-3">Product Image</div>
 									<div class="col-md-3">Product Name</div>
 									<div class="col-md-3">Price in $.</div>
 								</div>
@@ -58,7 +57,6 @@ if(isset($_SESSION["uid"])){
 								<div id="cart_product">
 								<!--<div class="row">
 									<div class="col-md-3">Sl.No</div>
-									<div class="col-md-3">Product Image</div>
 									<div class="col-md-3">Product Name</div>
 									<div class="col-md-3">Price in $.</div>
 								</div>-->
@@ -81,7 +79,7 @@ if(isset($_SESSION["uid"])){
 										<input type="password" class="form-control" name="password" id="password" required/>
 										<p><br/></p>
 										<a href="#" style="color:white; list-style:none;">Forgotten Password</a><input type="submit" class="btn btn-success" style="float:right;">
-										<div><a href="customer_registration.php?register=1">Create a new account?</a></div>	
+										<div><a href="customer_registration.php?register=1" style="color:white; list-style:none;">Create a new account?</a></div>	
 									</form>
 								</div>
 								<div class="panel-footer" id="e_msg"></div>
@@ -142,7 +140,7 @@ if(isset($_SESSION["uid"])){
 							</div>
 						</div> -->
 					</div>
-					<div class="panel-footer">&copy; 2016</div>
+					<div class="panel-footer">&copy; 2018</div>
 				</div>
 			</div>
 			<div class="col-md-1"></div>

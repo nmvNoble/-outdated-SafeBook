@@ -55,7 +55,6 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-md-2 col-xs-2"><b>Action</b></div>
-							<div class="col-md-2 col-xs-2"><b>Product Image</b></div>
 							<div class="col-md-2 col-xs-2"><b>Product Name</b></div>
 							<div class="col-md-2 col-xs-2"><b>Quantity</b></div>
 							<div class="col-md-2 col-xs-2"><b>Product Price</b></div>
@@ -69,7 +68,6 @@
 									<a href="" class="btn btn-primary"><span class="glyphicon glyphicon-ok-sign"></span></a>
 								</div>
 							</div>
-							<div class="col-md-2"><img src='product_images/imges.jpg'></div>
 							<div class="col-md-2">Product Name</div>
 							<div class="col-md-2"><input type='text' class='form-control' value='1' ></div>
 							<div class="col-md-2"><input type='text' class='form-control' value='5000' disabled></div>

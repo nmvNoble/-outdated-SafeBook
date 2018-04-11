@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 07, 2017 at 03:48 AM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 7.0.9
+-- Generation Time: Apr 11, 2018 at 01:05 PM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -46,22 +46,29 @@ CREATE TABLE `cart` (
   `qty` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `p_id`, `ip_add`, `user_id`, `qty`) VALUES
+(1, 1, '::1', -1, 1);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Table structure for table `genre`
 --
 
-CREATE TABLE `categories` (
-  `cat_id` int(100) NOT NULL,
-  `cat_title` text NOT NULL
+CREATE TABLE `genre` (
+  `genre_id` int(100) NOT NULL,
+  `genre_title` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `categories`
+-- Dumping data for table `genre`
 --
 
-INSERT INTO `categories` (`cat_id`, `cat_title`) VALUES
+INSERT INTO `genre` (`genre_id`, `genre_title`) VALUES
 (1, 'Arts & Photography'),
 (2, 'Biography'),
 (3, 'Children Books'),
@@ -95,7 +102,7 @@ CREATE TABLE `orders` (
 
 CREATE TABLE `products` (
   `product_id` int(100) NOT NULL,
-  `product_cat` int(100) NOT NULL,
+  `product_genre` int(100) NOT NULL,
   `product_title` varchar(255) NOT NULL,
   `product_price` int(100) NOT NULL,
   `product_desc` text NOT NULL,
@@ -109,6 +116,13 @@ CREATE TABLE `products` (
   `user_ID` int(100) NOT NULL,
   `author_ID` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`product_id`, `product_genre`, `product_title`, `product_price`, `product_desc`, `product_keywords`, `product_DayCreated`, `product_MonthCreated`, `product_YearCreated`, `product_DayPosted`, `product_MonthPosted`, `product_YearPosted`, `user_ID`, `author_ID`) VALUES
+(1, 6, 'Bananas', 99, 'this is a bananas', 'banans', 9, 9, 1998, 11, 4, 2018, 123, 123);
 
 -- --------------------------------------------------------
 
@@ -132,16 +146,22 @@ CREATE TABLE `user_info` (
 --
 
 --
+-- Indexes for table `author_info`
+--
+ALTER TABLE `author_info`
+  ADD PRIMARY KEY (`author_id`);
+
+--
 -- Indexes for table `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `categories`
+-- Indexes for table `genre`
 --
-ALTER TABLE `categories`
-  ADD PRIMARY KEY (`cat_id`);
+ALTER TABLE `genre`
+  ADD PRIMARY KEY (`genre_id`);
 
 --
 -- Indexes for table `orders`
@@ -169,12 +189,12 @@ ALTER TABLE `user_info`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT for table `genre`
 --
-ALTER TABLE `categories`
-  MODIFY `cat_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE `genre`
+  MODIFY `genre_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `orders`
 --
@@ -184,7 +204,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `product_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 --
 -- AUTO_INCREMENT for table `user_info`
 --
