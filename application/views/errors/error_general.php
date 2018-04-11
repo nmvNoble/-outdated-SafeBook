@@ -56,9 +56,7 @@ p {
 </style>
 </head>
 <body>
-	<div id="container">
-		<h1><?php echo $heading; ?></h1>
-		<?php echo $message; ?>
+    <div id="container"><h1>Error</h1>
 	</div>
 </body>
 </html>

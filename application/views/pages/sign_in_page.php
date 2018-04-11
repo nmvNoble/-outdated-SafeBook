@@ -3,7 +3,6 @@ include(APPPATH . 'views/header.php');
 ?>
 <script src="<?php echo base_url('zxcvbn-master/dist/zxcvbn.js'); ?>"></script>
 <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
-<script>document.cookie = "timing=0;" + ";path=/"; </script>
 
 <body class = "sign-in">
     <div class = "container-fluid">
@@ -15,7 +14,7 @@ include(APPPATH . 'views/header.php');
             <!--Sign In-->
             <div class = "col-md-10 col-md-offset-1" style = "margin-bottom: 2%; ">
                 <div id = "sign-in-container" class = "col-md-12 content-container no-padding">
-                    <form class = "form-inline" id = "log-in-form" onsubmit = "timeLogIn(); return log_in()" method = "post">
+                    <form class = "form-inline" id = "log-in-form" onsubmit = "return log_in()" method = "post">
                         <div class ="form-group">
                             <h3 class = "sign-in-header no-padding no-margin" style = "margin-left: 40px; padding: 10px;"><strong>Log In</strong></h3>
                         </div>
@@ -31,6 +30,22 @@ include(APPPATH . 'views/header.php');
                             </div>
                         </div>
                     </form>
+                    <a href="#forgoti" data-toggle="collapse" style = "margin-left: 40px;">Forgot Password?</a>
+                </div>
+                <div id="forgoti" class="collapse"> 
+                
+                <form class = "form-inline" id = "log-in-form" onsubmit = "return forgot()" method = "post">
+                        
+                        <div class = "pull-right" style = "padding-top: 10px; padding-right: 10px; padding-bottom: 10px">
+                            <div class = "form-group" style = "margin-right: 5px;">
+                                <input style="font-size: 20px" id = "log-in-email" type = "text" required name = "log_in_email" class = "form-control sign-in-field" placeholder = "Email"/>
+                            </div>
+                            <div class = "form-group text-center">
+                                <button type="submit" class="btn btn-primary buttonsgo" style = "width: 100%;font-size:24px;">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                
                 </div>
             </div>
 
@@ -82,58 +97,6 @@ include(APPPATH . 'views/header.php');
         </div>
     </div>
 
-<script>
-   document.cookie = 'birthday=0;path=/';
-   
-    var now = new Date();
-    var nexttimed = new Date();
-    var time1 = now.getTime();
-    var time2 = now.getTime()+(3600 * 1000);
-    
-    document.cookie = "nexttimed1=;path=/"; 
-    document.cookie = "nexttimed2=;path=/"; 
-    document.cookie = "blur=0;path=/"; 
-    document.cookie = "warned=0;path=/"; 
-    document.cookie = "dance=;path=/"; 
-    
-    function timeLogIn()
-    {
-        now.setTime(time1);
-        nexttimed.setTime(time2);
-        var hours = now.getHours();
-        var mins = now.getMinutes();
-        var secs = now.getSeconds();
-        var meridiem = 'AM';
-        
-        if(now.getHours()>12)
-        {
-            hours=hours-12;
-            meridiem='PM';
-        }
-        
-        if(now.getMinutes()<10)
-        {
-            mins = '0' + mins;
-        }
-        
-        if(now.getSeconds()<10)
-        {
-            secs = '0' + secs;
-        }
-            
-        document.cookie = 'loginTime=' + hours + ':' + mins + ':' + secs + '  ' + meridiem + ';path=/';
-        document.cookie = "loginTime1=" + now.getHours() + ";path=/"; 
-        document.cookie = "loginTime2=" + now.getMinutes() +";path=/"; 
-        document.cookie = "nexttimed1=" + nexttimed.getHours() +";path=/"; 
-        document.cookie = "nexttimed2=" + nexttimed.getMinutes() +";path=/"; 
-        document.cookie = "score=0;path=/"; 
-        document.cookie = "randomcolors=0;path=/"; 
-        document.cookie = "MouseTrail=0;" + ";path=/";
-        document.cookie = "blur=0;" + ";path=/"; 
-        return;
-    }
-
-</script>
 
 <!--password strength checker-->
 <script type="text/javascript">
@@ -161,22 +124,22 @@ include(APPPATH . 'views/header.php');
             if(val !== "") {
 //                text.innerHTML = "Strength: " + "<strong>" + strength[result.score] + "</strong>" + "<br><span class='feedback'>" + result.feedback.warning + "<br>" + result.feedback.suggestions + "<br></span"; 
                 if(strength[result.score]==='Worst ☹' && password.value.length<8)
-                    text.innerHTML = "Strength: " + "<strong style='color:red'>" + strength[result.score] + "</strong>" + "<br><span class='feedback' style='color:red'>" + "Your password is too short! Try using more letters and numbers!" + "<br>" + "<br></span"; 
+                    text.innerHTML = "Strength: " + "<strong style='color:red'>" + strength[result.score] + "</strong>" + "<br><span class='feedback' >" + "Your password is too short! Try using more letters and numbers!" + "<br>" + "<br></span"; 
                 
                 else if(strength[result.score]==='Worst ☹' && password.value.length<8)
-                    text.innerHTML = "Strength: " + "<strong style='color:red'>" + strength[result.score] + "</strong>" + "<br><span class='feedback' style='color:red'>" + "Your password is very easy to crack! Try using different letters and numbers!" + "<br>" + "<br></span"; 
+                    text.innerHTML = "Strength: " + "<strong style='color:red'>" + strength[result.score] + "</strong>" + "<br><span class='feedback' >" + "Your password is very easy to crack! Try using different letters and numbers!" + "<br>" + "<br></span"; 
                     
                 else if(strength[result.score]==='Bad ☹'  && password.value.length<8)
-                    text.innerHTML = "Strength: " + "<strong style='color:orange'>" + strength[result.score] + "</strong>" + "<br><span class='feedback' style='color:orange'>" + "Your password is still easy to crack! Try using different letters and numbers!" + "<br>" + "<br></span"; 
+                    text.innerHTML = "Strength: " + "<strong style='color:orange'>" + strength[result.score] + "</strong>" + "<br><span class='feedback' >" + "Your password is still easy to crack! Try using different letters and numbers!" + "<br>" + "<br></span"; 
                 
                 else if(strength[result.score]==='Weak ☹')
-                    text.innerHTML = "Strength: " + "<strong style='color:yellow'>" + strength[result.score] + "</strong>" + "<br><span class='feedback' style='color:yellow'>" + "Your password is still easy to crack!" + "<br>" + "<br></span"; 
+                    text.innerHTML = "Strength: " + "<strong style='color:yellow'>" + strength[result.score] + "</strong>" + "<br><span class='feedback'>" + "Your password is still easy to crack!" + "<br>" + "<br></span"; 
                     
                 else if(strength[result.score]==='Good ☺')
-                    text.innerHTML = "Strength: " + "<strong style='color:green'>" + strength[result.score] + "</strong>" + "<br><span class='feedback' style='color:green'>" + "Your password is good!" + "<br>" + "<br></span"; 
+                    text.innerHTML = "Strength: " + "<strong style='color:green'>" + strength[result.score] + "</strong>" + "<br><span class='feedback' >" + "Your password is good!" + "<br>" + "<br></span"; 
                     
                 else if(strength[result.score]==='Strong ☺')
-                    text.innerHTML = "Strength: " + "<strong style='color:blue'>" + strength[result.score] + "</strong>" + "<br><span class='feedback' style='color:blue'>" + "Your password is strong!" + "<br>" + "<br></span"; 
+                    text.innerHTML = "Strength: " + "<strong style='color:blue'>" + strength[result.score] + "</strong>" + "<br><span class='feedback'>" + "Your password is strong!" + "<br>" + "<br></span"; 
               
             }
             else {

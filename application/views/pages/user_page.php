@@ -35,7 +35,7 @@ include(APPPATH . 'views/header.php');
 
                     <!-- User Topics -->
                     <div class = "col-md-12 user-topic-container">
-                        <h3 class = "text-info text-center user-topic-header modalbg" style="margin-bottom: 2px;"><strong class="textoutliner">Topics of <?php echo $user->first_name ?></strong></h3>
+                       
                         <ul class="nav nav-pills nav-justified">
                             <li class="active"><a data-toggle="pill" href="#user-topic-created">Published ebooks</a></li>
                             <li><a data-toggle="pill" href="#user-topic-followed">Cart</a></li>
@@ -44,9 +44,6 @@ include(APPPATH . 'views/header.php');
                         <div class="tab-content">
                             <div id="user-topic-created" class="tab-pane fade in active">
                                 <div class = "col-sm-12 no-padding">
-                                    <div class = "user-header">
-                                        <h4 class = "text-center"><strong>Topics Created by <?php echo $user->first_name; ?></strong></h4>
-                                    </div>
                                     <div class = "user-topic-div">
                                         <ul class="nav">
                                             <?php foreach ($user->topics as $topic): ?>
@@ -63,9 +60,6 @@ include(APPPATH . 'views/header.php');
                             </div>
                             <div id="user-topic-followed" class="tab-pane fade">
                                 <div class = "col-sm-12 no-padding">
-                                    <div class = "user-header">
-                                        <h4 class = "text-center"><strong>Topics Followed by <?php echo $user->first_name; ?></strong></h4>
-                                    </div>
                                     <div class = "user-topic-div">
                                         <ul class="nav">
                                             <?php foreach ($user->followed_topics as $topic):

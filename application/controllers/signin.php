@@ -55,6 +55,22 @@ class Signin extends CI_Controller {
             echo 0;
         }
     }
+    
+    public function forgot() {
+        $this->load->model('user_model', 'user');
+        $fields = array('email' => $this->input->post('log_in_email'),
+            'is_enabled' => true);
+
+        $user = $this->user->get_user(true, false, $fields);
+
+        if ($user) {
+            
+
+            echo 1;
+        } else {
+            echo 0;
+        }
+    }
 
     public function logout() {
         $this->session->sess_destroy();
