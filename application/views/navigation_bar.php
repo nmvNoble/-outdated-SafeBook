@@ -104,7 +104,7 @@ $unanswered = $logged_user->unanswered_invites + $logged_user->unanswered_reques
 
                             <div class="navbaricons2">
                             <a onclick="window.speechSynthesis.cancel();" id="logout-btn" class="navbaricons" href="<?php echo base_url('signin/logout'); ?>" style="margin-right:4%;"><i class = "glyphicon glyphicon-log-out iconin"></i>Logout
-                                <span class="tooltiptext">Log out of Mukhlat</span></a>
+                                </a>
 
 <!--                            <a class="navbaricons" href="#customize-theme" data-toggle = "modal">
                                         <i class = "fa fa-paint-brush iconin"></i>Colors
@@ -121,12 +121,12 @@ $unanswered = $logged_user->unanswered_invites + $logged_user->unanswered_reques
                             </a>-->
                             <div class="vl"  style="margin-right:0.3%;"></div>
  
-                                <a class="navbaricons" href="<?php echo base_url('topic') ?>"><strong class="iconin"><i class = "glyphicon glyphicon-list iconin"></i>ebooks</strong><span class="tooltiptext">You can browse others' topics here!</span></a>
-                                <a class="navbaricons" href="<?php echo base_url('home') ?>"><strong class="iconin"><i id="home2" class = "glyphicon glyphicon-home iconin"></i></i>Home</strong><span class="tooltiptext">Go back to the homepage</span></a>
+                                <!--<a class="navbaricons" href="<?php echo base_url('topic') ?>"><strong class="iconin"><i class = "glyphicon glyphicon-list iconin"></i>ebooks</strong></a>-->
+                                <a class="navbaricons" href="<?php echo base_url('topic') ?>"><strong class="iconin"><i id="home2" class = "glyphicon glyphicon-home iconin"></i></i>Home</strong></a>
                                
                                 <a class="navbarprofileicon" href="<?php echo base_url('user/profile/' . $logged_user->user_id); ?>" >
                                 <img class = "img-circle nav-prof-pic iconin" src = "<?php echo $logged_user->profile_url ? base_url($logged_user->profile_url) : base_url('images/default.jpg') ?>"/> 
-                                <?php echo $logged_user->first_name; ?><span class="tooltiptext">Check your profile!</span></a>
+                                <?php echo $logged_user->first_name; ?></a>
 
                 </div>
             </div>

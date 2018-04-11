@@ -8,9 +8,10 @@ include(APPPATH . 'views/header.php');
     include(APPPATH . 'views/navigation_bar.php');
     include(APPPATH . 'views/topic_side_bar.php');
     $logged_user = $_SESSION['logged_user'];
-
+    
     ?>
 <!--    <script src='https://code.responsivevoice.org/responsivevoice.js'></script>-->
+    <script type="text/javascript">location.href = 'http://localhost/SafebookBeta/topic';</script>
     <div class = "container page">
         <div class = "row">
             <div class = "col-md-9 home-container">

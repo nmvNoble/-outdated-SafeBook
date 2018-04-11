@@ -82,6 +82,7 @@ include(APPPATH . 'views/modals/ebook_details_modal.php');
                 <?php endif; ?>
             </ul>
         </div>
+        
         <center><div class="btn btn-primary buttonsbgcolor textoutliner" onclick="$('#ebookdet').modal('show');">Checkout
         </div></center>
         <?php
