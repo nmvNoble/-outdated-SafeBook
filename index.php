@@ -81,6 +81,7 @@ if(isset($_SESSION["uid"])){
 										<input type="password" class="form-control" name="password" id="password" required/>
 										<p><br/></p>
 										<a href="#" style="color:white; list-style:none;">Forgotten Password</a><input type="submit" class="btn btn-success" style="float:right;">
+										<div><a href="customer_registration.php?register=1">Create a new account?</a></div>	
 									</form>
 								</div>
 								<div class="panel-footer" id="e_msg"></div>
