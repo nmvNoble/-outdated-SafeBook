@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<?php if (isset($error['file']) && strpos($error['file'], realpath(BASEPATH)) !== 0): ?>
 
 			<p style="margin-left:10px">
-			<h1>Error</h1><a class="navbaricons" href="<?php echo base_url('topic') ?>"><strong class="iconin">go back</strong></a>
+			<h1>Error</h1><a class="navbaricons" href="<?php echo base_url('signin') ?>"><strong class="iconin">go back</strong></a>
 			</p>
 
 		<?php endif ?>

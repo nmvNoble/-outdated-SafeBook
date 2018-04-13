@@ -4,7 +4,11 @@ include(APPPATH . 'views/header.php');
 <body>
     <?php
     include(APPPATH . 'views/navigation_bar.php');
-    $logged_user = $_SESSION['logged_user'];
+    $logged_user = $_SESSION['logged_user'];  
+    if (is_null($logged_user)){
+        header("Location: http://localhost/SafebookBeta/signin");
+        die();
+    }
     ?>
    <script type="text/javascript">location.href = 'http://localhost/SafebookBeta/topic';</script>
     <div class = "container page">

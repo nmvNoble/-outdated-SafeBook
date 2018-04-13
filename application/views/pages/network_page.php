@@ -1,6 +1,10 @@
 <?php
 include(APPPATH . 'views/header.php');
-$logged_user = $_SESSION['logged_user'];
+$logged_user = $_SESSION['logged_user']; 
+    if (is_null($logged_user)){
+        header("Location: http://localhost/SafebookBeta/signin");
+        die();
+    }
 ?>
 <body class = "sign-in">
     <div class = "container" style = "margin-top: 30px;">

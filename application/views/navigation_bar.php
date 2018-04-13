@@ -1,5 +1,9 @@
 <?php
 $logged_user = $_SESSION['logged_user'];
+    if (is_null($logged_user)){
+        header("Location: http://localhost/SafebookBeta/signin");
+        die();
+    }
 $unanswered = $logged_user->unanswered_invites + $logged_user->unanswered_requests;
 ?>
 <?php 

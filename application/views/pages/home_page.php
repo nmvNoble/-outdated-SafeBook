@@ -7,7 +7,11 @@ include(APPPATH . 'views/header.php');
     <?php
     include(APPPATH . 'views/navigation_bar.php');
     include(APPPATH . 'views/topic_side_bar.php');
-    $logged_user = $_SESSION['logged_user'];
+    $logged_user = $_SESSION['logged_user']; 
+    if (is_null($logged_user)){
+        header("Location: http://localhost/SafebookBeta/signin");
+        die();
+    }
     
     ?>
 <!--    <script src='https://code.responsivevoice.org/responsivevoice.js'></script>-->

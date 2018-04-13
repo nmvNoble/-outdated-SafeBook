@@ -1,5 +1,9 @@
 <?php
 $logged_user = $_SESSION['logged_user'];
+    if (is_null($logged_user)){
+        header("Location: http://localhost/SafebookBeta/signin");
+        die();
+    }
 include(APPPATH . 'views/modals/camera_modal.php');
 include(APPPATH . 'views/modals/recorder_modal.php');
 include(APPPATH . 'views/modals/play_modal.php');

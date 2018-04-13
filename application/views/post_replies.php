@@ -1,6 +1,10 @@
 <?php
 $user = $post->user;
 $logged_user = $_SESSION['logged_user'];
+    if (is_null($logged_user)){
+        header("Location: http://localhost/SafebookBeta/signin");
+        die();
+    }
 if ($post->parent_id !== '0'):
     ?>
     <div class = "media" style = "border-left: 2px solid gray;">

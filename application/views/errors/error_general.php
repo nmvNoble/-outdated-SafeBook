@@ -56,7 +56,7 @@ p {
 </style>
 </head>
 <body>
-    <div id="container"><h1>Error</h1><a class="navbaricons" href="<?php echo base_url('topic') ?>"><strong class="iconin">go back</strong></a>
+    <div id="container"><h1>Error</h1><a class="navbaricons" href="<?php echo base_url('signin') ?>"><strong class="iconin">go back</strong></a>
 	</div>
 </body>
 </html>
