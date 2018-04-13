@@ -10,7 +10,7 @@ include(APPPATH . 'views/header.php');
         die();
     }
     ?>
-   <script type="text/javascript">location.href = 'http://localhost/SafebookBeta/topic';</script>
+   
     <div class = "container page">
         <div class = "row">
             <div class = "col-md-12 content-container" style = "padding-top: 20px;">

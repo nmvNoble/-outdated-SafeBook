@@ -13,11 +13,13 @@ include(APPPATH . 'views/modals/ebook_details_modal.php');
         <!--Header-->
         <div class = "clearfix content-container" style="border-radius:20px;cursor: pointer;position: relative" id = "side-topics-followed-btn" >
             <i class="fa fa-chevron-down pull-left" style="display: inline;position: absolute;top:40%;cursor: pointer;"></i>
-                       
+                            
+                        <a class="text1color" href = "<?php echo base_url('user/profile/' . $logged_user->user_id); ?>">
                             <img class = "pull-left img-rounded home-prof-pic topictop" src = "<?php echo $logged_user->profile_url ? base_url($logged_user->profile_url) : base_url('images/default.jpg') ?>">
                         
                         <div class = "col-sm-4 home-user-text">
                             <div class = "home-username text1color"><strong><?php echo $logged_user->first_name . " " . $logged_user->last_name;?></strong></div>
+
 <!--                            <i class = "fa fa-caret-right header-arrow"></i> 
                             <div class="home-dropdown dropdown">
                                 <button class="btn btn-link dropdown-toggle home-username text1color" type="button" data-toggle="dropdown"><strong>Home</strong>
@@ -28,6 +30,7 @@ include(APPPATH . 'views/modals/ebook_details_modal.php');
                                 </ul>
                             </div>-->
                         </div>
+                        </a>
  </div>
         <div id = "side-topics-followed">
         <!--<h3 class = "text-center text-info no-padding no-margin text1color" style = "margin-bottom: 10px;"><strong>Topic Shortcuts</strong></h3>-->

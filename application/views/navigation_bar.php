@@ -68,12 +68,16 @@ $unanswered = $logged_user->unanswered_invites + $logged_user->unanswered_reques
                             </a>-->
                             <div class="vl"  style="margin-right:0.3%;"></div>
  
-                                <!--<a class="navbaricons" href="<?php echo base_url('topic') ?>"><strong class="iconin"><i class = "glyphicon glyphicon-list iconin"></i>ebooks</strong></a>-->
-                                <a class="navbaricons" href="<?php echo base_url('topic') ?>"><strong class="iconin"><i id="home2" class = "glyphicon glyphicon-home iconin"></i></i>Home</strong></a>
+                                <a class="navbaricons" href="<?php echo base_url('topic') ?>"><strong class="iconin"><i class = "glyphicon glyphicon-list iconin"></i>ebooks</strong></a>
+                                <?php if ($logged_user->role_id==='1') {?>
+                                <a class="navbaricons" href="<?php echo base_url('home') ?>"><strong class="iconin"><i id="home2" class = "glyphicon glyphicon-home iconin"></i></i>Home</strong></a>
+                                <?php }  ?>
                                
                                 <div class="navbarprofileicon">
-                                <img class = "img-circle nav-prof-pic iconin" src = "<?php echo $logged_user->profile_url ? base_url($logged_user->profile_url) : base_url('images/default.jpg') ?>"/> 
-                                <?php echo $logged_user->first_name; ?></div>
+                                <a class="text1color" href = "<?php echo base_url('user/profile/' . $logged_user->user_id); ?>">
+                                    <img class = "img-circle nav-prof-pic iconin" src = "<?php echo $logged_user->profile_url ? base_url($logged_user->profile_url) : base_url('images/default.jpg') ?>"/> 
+                                    <?php echo $logged_user->first_name; ?></div>
+                                </a>
 
                 </div>
             </div>
