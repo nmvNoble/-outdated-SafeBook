@@ -12,7 +12,8 @@ $logged_user = $_SESSION['logged_user'];
             </div>
             
             <div class = "col-md-8 col-md-offset-2 content-container">
-                <a href = "<?php echo base_url('admin/network'); ?>" class = "btn btn-primary btn-block"><i class = "fa fa-globe"></i> View Interaction Network of Mukhlat</a>
+                <!--<a href = "<?php echo base_url('admin/network'); ?>" class = "btn btn-primary btn-block"><i class = "fa fa-globe"></i> View Interaction Network of Safebook</a>-->
+                <a class="navbaricons" href="<?php echo base_url('topic') ?>"><strong class="iconin"><i class = "glyphicon glyphicon-list iconin"></i>ebooks</strong></a>
             </div>
             
             <!-- Admin Content -->

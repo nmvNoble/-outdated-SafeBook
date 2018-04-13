@@ -19,9 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<?php if (isset($error['file']) && strpos($error['file'], realpath(BASEPATH)) !== 0): ?>
 
 			<p style="margin-left:10px">
-			File: <?php echo $error['file']; ?><br />
-			Line: <?php echo $error['line']; ?><br />
-			Function: <?php echo $error['function']; ?>
+			<h1>Error</h1><a class="navbaricons" href="<?php echo base_url('topic') ?>"><strong class="iconin">go back</strong></a>
 			</p>
 		<?php endif ?>
 

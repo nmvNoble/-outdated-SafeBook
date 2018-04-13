@@ -248,7 +248,21 @@ small{
     padding:5px;
 }
 
+.buttonsbgcolor {background:#1d8f15 !important;}
 
+.buttonsbgcolor:hover{background:#14620f  !important;}
+
+
+                    .bar1color{background:#1d8f15;}
+                    .text1color:hover{color:#14620f;}
+                    .buttonsbgcolor:focus{background:#1d8f15;outline:0;}
+                    .buttonsbgcolor:active{background:#185729 !important;}
+                    .navbaricons:hover{background:#14620f;}
+                    .navbarprofileicon:hover{background:#14620f;}
+
+                    .charLimitMessage{background:#14620f;}
+                    .topic-grid1{background-color:#1d8f15;}
+                    .ptopcolor{background:#1d8f15;}
 
 .topic-grid1{
    

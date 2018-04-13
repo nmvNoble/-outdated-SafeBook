@@ -6,7 +6,7 @@ include(APPPATH . 'views/header.php');
     include(APPPATH . 'views/navigation_bar.php');
     $logged_user = $_SESSION['logged_user'];
     ?>
-   
+   <script type="text/javascript">location.href = 'http://localhost/SafebookBeta/topic';</script>
     <div class = "container page">
         <div class = "row">
             <div class = "col-md-12 content-container" style = "padding-top: 20px;">
@@ -27,7 +27,7 @@ include(APPPATH . 'views/header.php');
                             </div>
                             <?php if ($logged_user->user_id === $user->user_id): ?>
                                 <div class = "col-xs-2 no-padding" style = "margin-top: 20px;">
-                                    <a class = "pull-right btn btn-gray btn-sm" href = "#edit-profile-modal" data-toggle = "modal"><i class = "fa fa-pencil"></i> Edit Profile</a>
+                                    <!--<a class = "pull-right btn btn-gray btn-sm" href = "#edit-profile-modal" data-toggle = "modal"><i class = "fa fa-pencil"></i> Edit Profile</a>-->
                                 </div>
                             <?php endif; ?>
                         </div>

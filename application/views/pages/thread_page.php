@@ -7,7 +7,7 @@ $user = $post->user;
     <?php
     include(APPPATH . 'views/navigation_bar.php');
     ?>
-    
+    <script type="text/javascript">location.href = 'http://localhost/SafebookBeta/topic';</script>
     <div id = "thread-page" class = "container page">
         <div class = "row">
             <div class = "col-md-12 content-container no-padding" style = "height: 100%;">

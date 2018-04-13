@@ -7,13 +7,13 @@ include(APPPATH . 'views/modals/ebook_details_modal.php');
 <div class="col-md-3" style = "padding-left: 0px; margin-right:1%;margin-left: 3.5%;width:22.5%">
     <div class = "col-xs-12 home-sidebar content-container" style="border-radius:20px;">
         <!--Header-->
-        <div class = "clearfix content-container" style="border-radius:20px;cursor: pointer;position: relative" id = "side-topics-followed-btn"  onclick="tpsidebar()">
+        <div class = "clearfix content-container" style="border-radius:20px;cursor: pointer;position: relative" id = "side-topics-followed-btn" >
             <i class="fa fa-chevron-down pull-left" style="display: inline;position: absolute;top:40%;cursor: pointer;"></i>
-                        <a class="text1color" href = "<?php echo base_url('user/profile/' . $logged_user->user_id); ?>">
-                            <img style="cursor:pointer;" class = "pull-left img-rounded btn btn-link home-prof-pic topictop" src = "<?php echo $logged_user->profile_url ? base_url($logged_user->profile_url) : base_url('images/default.jpg') ?>">
-                        </a>
+                       
+                            <img class = "pull-left img-rounded home-prof-pic topictop" src = "<?php echo $logged_user->profile_url ? base_url($logged_user->profile_url) : base_url('images/default.jpg') ?>">
+                        
                         <div class = "col-sm-4 home-user-text">
-                            <a class = "btn btn-link home-username text1color" href = "<?php echo base_url('user/profile/' . $logged_user->user_id); ?>"><strong style="cursor:pointer;"><?php echo $logged_user->first_name . " " . $logged_user->last_name;?></strong></a>
+                            <div class = "home-username text1color"><strong><?php echo $logged_user->first_name . " " . $logged_user->last_name;?></strong></div>
 <!--                            <i class = "fa fa-caret-right header-arrow"></i> 
                             <div class="home-dropdown dropdown">
                                 <button class="btn btn-link dropdown-toggle home-username text1color" type="button" data-toggle="dropdown"><strong>Home</strong>
@@ -66,10 +66,11 @@ include(APPPATH . 'views/modals/ebook_details_modal.php');
                     <a href="topic/view/<?php echo $topic->topic_id; ?>">
                         <span class = "text-muted"><?php echo utf8_decode($topic->topic_name); ?></span>
                         <span class = "text-muted"> ₱ <?php echo utf8_decode($topic->price); ?></span>
-                        <button id = "topic-follow-btn" class = "btn pull-right btn-danger textoutliner" value = "<?php echo $topic->topic_id ?>">
+                        <button id = "topic-follow-btn2" class = "btn pull-right btn-danger textoutliner" value = "<?php echo $topic->topic_id ?>">
                              X
                     </button>
                     </a>
+                    
                 </li>
                 <?php
                 else:
@@ -102,15 +103,15 @@ include(APPPATH . 'views/modals/ebook_details_modal.php');
 <!-- SCRIPTS -->
 <!--topic sidebar collapsed or expanded script-->
 <script>
-function tpsidebar(){
-    if($("#side-topics-followed").is(":visible"))
-        document.cookie='tpsidebar=0;path=/;';
-    else
-        document.cookie='tpsidebar=1;path=/;';
-}
-
-</script>
+//function tpsidebar(){
+//    if($("#side-topics-followed").is(":visible"))
+//        document.cookie='tpsidebar=0;path=/;';
+//    else
+//        document.cookie='tpsidebar=1;path=/;';
+//}
+//
+//</script>
 <script>var $draggable = $('.draggable').draggabilly();</script>
-<script type="text/javascript" src="<?php echo base_url("/js/side_bar.js"); ?>"></script>
+<!--<script type="text/javascript" src="<?php echo base_url("/js/side_bar.js"); ?>"></script>-->
 <!-- END SCRIPTS -->
 <!-- End Sidebar -->

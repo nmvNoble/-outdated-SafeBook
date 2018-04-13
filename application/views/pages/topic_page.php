@@ -44,20 +44,20 @@ $c_topic = $_SESSION['current_topic'];
                         <h4 class = "no-margin text-center user-topic-header topic-intro-header bar1color">
                             <strong class="textoutliner"><?php echo utf8_decode($c_topic->topic_name); ?></strong>
 
-                            <?php if ($is_moderated): ?>
+                            <?php if ($is_moderated || $logged_user->role_id==='1'): ?>
                             <br>
                             <button id = "edit-topic-btn" class = "btn btn-default"><i class = "fa fa-pencil"></i> Edit Description</button>
 
-                            <?php if ($c_topic->creator_id === $logged_user->user_id): ?>
+                            <?php if ($c_topic->creator_id === $logged_user->user_id  || $logged_user->role_id==='1'): ?>
                                 <button type = "button" id = "cancel-topic-btn" class = "btn btn-danger" style = "margin-left: 5px;"><i class = "fa fa-trash"></i> Cancel ebook</button>
                             <?php endif; 
                             endif;?>
                         </h4>
                         <div class = "content-container topic-intro-content">
                             <p id = "desc-creator" class = "no-margin text-muted" align = "center">
-                                <small><i>by <a class = "btn btn-link btn-xs no-padding no-margin text1color" href = "<?php echo base_url('user/profile/' . $c_topic->user->user_id); ?>"><?php echo $c_topic->user->first_name . " " . $c_topic->user->last_name; ?></a></i></small>
+                                <small><i>by <span class = "no-padding no-margin text1color" ><?php echo $c_topic->user->first_name . " " . $c_topic->user->last_name; ?></span></i></small>
                             </p>
-                            <?php if ($is_moderated): ?>
+                            <?php if ($is_moderated || $logged_user->role_id==='1'): ?>
                                 <div id = "desc-edit" class = "col-md-12 hidden">
                                     <div class = "form-group" style = "margin-bottom: 5px;">
                                         <p class="lead emoji-picker-container">
@@ -71,7 +71,9 @@ $c_topic = $_SESSION['current_topic'];
                                 </div>
                             <?php endif; ?>
                             <p id = "desc-container" class = "no-margin wrap text-center">
-                                <?php echo utf8_decode($c_topic->topic_description); ?>
+                                <?php echo utf8_decode($c_topic->topic_description); ?><br>
+                                Category: <?php echo utf8_decode($c_topic->category); ?><br>
+                                Price: ₱<?php echo utf8_decode($c_topic->price); ?>
                             </p>
                         </div>
                     </div>

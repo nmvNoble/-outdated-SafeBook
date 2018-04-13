@@ -16,6 +16,8 @@ function log_in() {
     return false;
 }
 
+
+
 function sign_up() {
     $("#sign-up-message").remove();
     if (check_values()) {

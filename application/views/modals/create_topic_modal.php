@@ -60,7 +60,7 @@
         <div class="modal-content text-center">
             <div class="modal-header modal-heading">
                 <button type="button" class="close" style = "padding: 5px;" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title"><strong>Confirm Topic Creation?</strong></h4>
+                <h4 class="modal-title"><strong>Confirm ebook publication?</strong></h4>
             </div>
             <div class="modal-body">
                 <button id = "create-topic-proceed" type = "submit" class = "btn btn-success">Proceed</button>

@@ -11,14 +11,14 @@ include(APPPATH . 'views/header.php');
             <div class = "col-md-offset-2 col-md-8 content-container text-center">
                 <h4 class = "text-muted"><i class = "fa fa-search"></i> Search Results for <i><?php echo $keyword; ?></i></h4>
                 <ul class="nav nav-pills" style = "display: inline-block;">
-                    <li class="active"><a data-toggle = "pill" href="#user-search">Users</a></li>
-                    <li><a data-toggle = "pill" href = "#topic-search">Topics</a></li>
+                    <!--<li class="active"><a data-toggle = "pill" href="#user-search">Users</a></li>-->
+                    <li class="active"><a data-toggle = "pill" href = "#topic-search">ebooks</a></li>
                 </ul>
             </div>
             <div class = "col-md-offset-2 col-md-8 content-container text-center">
                 <div class = "tab-content">
                     <!-- USERS -->
-                    <div id="user-search" class="tab-pane fade in active">
+<!--                    <div id="user-search" class="tab-pane fade in active">
                         <div id = "topic-list" class = "list-group">
                             <?php
                             if (!empty($users)):
@@ -37,10 +37,10 @@ include(APPPATH . 'views/header.php');
                             endif;
                             ?>
                         </div>
-                    </div>
+                    </div>-->
 
                     <!-- TOPICS -->
-                    <div id="topic-search" class="tab-pane fade">
+                    <div id="topic-search" class="tab-pane fade in active">
                         <div id = "topic-list" class = "list-group">
                             <?php
                             if (!empty($topics)):

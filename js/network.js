@@ -95,7 +95,7 @@ function loadDefaultNetwork() {
     edges.clear();
 
     //change UI
-    $("#network-header").html("Interaction Network within Mukhlat");
+    $("#network-header").html("Interaction Network within Safebook");
     $("#topic-tools").remove();
     $("#filter-tools").remove();
 

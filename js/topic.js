@@ -122,6 +122,29 @@ $(document).ready(function () {
             }
         });
     });
+    
+        $("#topic-follow-btn2").on("click", function () {
+        var follow_btn = $(this);
+        var topic_id = follow_btn.val();
+        $(".follow-label").remove();
+        $.ajax({
+            url: window.location.origin + "/SafebookBeta/topic/follow/" + topic_id,
+            type: "POST",
+            success: function () {
+                if (follow_btn.hasClass("btn-primary")) {
+                    //follow
+                    follow_btn.removeClass("btn-primary");
+                    follow_btn.addClass("btn-danger");
+                    follow_btn.html("X");
+                } else if (follow_btn.hasClass("btn-danger")) {
+                    //unfollow
+                    follow_btn.addClass("btn-primary");
+                    follow_btn.removeClass("btn-danger");
+                    follow_btn.html("+");
+                }
+            }
+        });
+    });
 
 
     $(".reply-btn").on("click", function () {
