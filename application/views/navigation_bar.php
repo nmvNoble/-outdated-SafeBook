@@ -74,7 +74,7 @@ $unanswered = $logged_user->unanswered_invites + $logged_user->unanswered_reques
                                 <?php }  ?>
                                
                                 <div class="navbarprofileicon">
-                                <a class="text1color" href = "<?php echo base_url('user/profile/' . $logged_user->user_id); ?>">
+                                <a class="text1color" style="color: white" href = "<?php echo base_url('user/profile/' . $logged_user->user_id); ?>">
                                     <img class = "img-circle nav-prof-pic iconin" src = "<?php echo $logged_user->profile_url ? base_url($logged_user->profile_url) : base_url('images/default.jpg') ?>"/> 
                                     <?php echo $logged_user->first_name; ?></div>
                                 </a>

@@ -9,6 +9,9 @@ include(APPPATH . 'views/header.php');
         header("Location: http://localhost/SafebookBeta/signin");
         die();
     }
+    if (!($user->user_id === $logged_user->user_id)){
+        header("Location: http://localhost/SafebookBeta/topic");
+    }
     ?>
    
     <div class = "container page">
@@ -24,14 +27,14 @@ include(APPPATH . 'views/header.php');
                             <div class = "col-xs-6 no-padding no-margin">
                                 <p class = "no-padding text-info" style = "margin-bottom: 0px;margin-top: 20px;"><strong><?php echo $user->first_name . " " . $user->last_name ?></strong></p>
                                 <small class = "no-padding no-margin"><?php echo $user->email ?></small>
-                                <p class = "wrap text-muted" style = "font-size: 12px;"><i><?php echo $user->description ? $user->description : 'Hello World!'; ?></i></p>
+                                <!--<p class = "wrap text-muted" style = "font-size: 12px;"><i><?php echo $user->description ? $user->description : 'Hello World!'; ?></i></p>-->
                                 <?php //feature unavailable - hide buttons 
                                 //echo '<button class = "btn btn-success btn-sm"><i class = "fa fa-phone"></i></button>
                                 //<button class = "btn btn-success btn-sm"><i class = "fa fa-comment"></i></button>' ?>
                             </div>
                             <?php if ($logged_user->user_id === $user->user_id): ?>
                                 <div class = "col-xs-2 no-padding" style = "margin-top: 20px;">
-                                    <!--<a class = "pull-right btn btn-gray btn-sm" href = "#edit-profile-modal" data-toggle = "modal"><i class = "fa fa-pencil"></i> Edit Profile</a>-->
+                                    <a class = "pull-right btn btn-gray btn-sm" href = "#edit-profile-modal" data-toggle = "modal"><i class = "fa fa-pencil"></i> Edit Profile</a>
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -71,7 +74,7 @@ include(APPPATH . 'views/header.php');
                                                 <li>
                                                     <a class = "user-topic-item" href="<?php echo base_url('topic/view/' . $topic->topic_id); ?>" style = "padding: 5px 30px;">
                                                         <h4 class = "no-padding no-margin text1color" style = "display: inline-block;"><?php echo utf8_decode($topic->topic_name); ?></h4>
-                                                        <span class = "pull-right label label-info follower-label"><i class = "fa fa-group"></i> <?php echo $topic->followers ? count($topic->followers) : '0' ?></span>
+                                                        <!--<span class = "pull-right label label-info follower-label"><i class = "fa fa-group"></i> <?php echo $topic->followers ? count($topic->followers) : '0' ?></span>-->
                                                     </a>
                                                 </li>
                                             <?php 

@@ -74,7 +74,7 @@ include(APPPATH . 'views/header.php');
                                     <input type = "date" required name = "sign_up_birthday" class = "form-control sign-in-field" id="birhdate10"><br>
 
                                 </div>
-                                <div class = "col-xs-2 form-group register-field" style = "font-size:24px;">Role
+                                <div class = "col-xs-2 form-group register-field" style = "font-size:24px;display:none;">Role
                                     <select class = "form-control" name = "sign_up_role" style = "font-size:24px;">
                                         <?php foreach ($roles as $role) : ?>
                                             <option style = "font-size:24px;" value="<?php echo $role->role_id; ?>"><?php echo $role->role_name; ?></option>
