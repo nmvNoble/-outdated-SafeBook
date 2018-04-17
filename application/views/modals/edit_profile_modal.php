@@ -56,12 +56,12 @@
                                 <input required type = "email" name = "edit_email" maxlength = "45" class = "form-control" placeholder = "Email Address" value = "<?php echo $logged_user->email; ?>">
                             </div>
                         </div>
-                        <div class = "col-sm-12 no-padding" style = "margin-bottom: 10px;">
+                        <div class = "col-sm-12 no-padding" style = "margin-bottom: 10px;display:none">
                             <div class = "col-xs-12 no-padding" style = "padding-top: 5px;">
                                 <span class = "text-muted"><strong>Description: </strong></span>
                             </div>
                             <div class = "col-xs-12 no-padding" style = "padding-top: 5px;">
-                                <textarea class = "text-muted form-control" name = "edit_description" maxlength = "75" placeholder = "Tell something about yourself"><?php echo $logged_user->description ?></textarea>
+                                <textarea class = "text-muted form-control" name = "edit_description" maxlength = "75" placeholder = "Tell something about yourself" value="Hello World!"><?php echo $logged_user->description ?></textarea>
                             </div>
                         </div>
                     </div>

@@ -48,7 +48,7 @@ class User extends CI_Controller {
         $input = $this->input;
         $firstname = utf8_encode(htmlspecialchars($input->post('edit_first')));
         $lastname = utf8_encode(htmlspecialchars($input->post('edit_last')));
-        $password = $input->post('edit_pass');
+        $password = hash('sha256', htmlspecialchars($input->post('edit_pass')));
         $email = utf8_encode(htmlspecialchars($input->post('edit_email')));
         $description = utf8_encode(htmlspecialchars($input->post('edit_description')));
 

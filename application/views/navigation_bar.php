@@ -16,8 +16,6 @@ $unanswered = $logged_user->unanswered_invites + $logged_user->unanswered_reques
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
 
-<script src="<?php echo base_url('draggabilly-master/dist/draggabilly.pkgd.min.js'); ?>"></script>
-
 <!-- Nav Bar -->
 
 
@@ -85,8 +83,7 @@ $unanswered = $logged_user->unanswered_invites + $logged_user->unanswered_reques
     </nav>
 <!-- Nav Bar Script -->
 <script type="text/javascript" src="<?php echo base_url("/js/nav_bar.js"); ?>"></script>
-<!--<script src="<?php // echo base_url('js/usagetimer.js'); ?>"></script>-->
-<script>var $draggable = $('.draggable').draggabilly();</script>
+
 <!--highlighted text reader script-->
 <!--<script>
 var synth = window.speechSynthesis;
