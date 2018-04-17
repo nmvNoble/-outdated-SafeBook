@@ -58,7 +58,7 @@ include(APPPATH . 'views/header.php');
                                 endforeach;
                             else:
                                 ?>
-                                <h3 class = "text-warning">No topics were found for <i><?php echo $keyword ?></i></h3>
+                                <h3 class = "text-warning">No eBooks were found for <i><?php echo $keyword ?></i></h3>
                             <?php
                             endif;
                             ?>
