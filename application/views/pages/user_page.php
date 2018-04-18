@@ -28,10 +28,6 @@ include(APPPATH . 'views/modals/change_password_and_email_modal.php');
                             <div class = "col-xs-6 no-padding no-margin">
                                 <p class = "no-padding text-info" style = "margin-bottom: 0px;margin-top: 20px;"><strong><?php echo $user->first_name . " " . $user->last_name ?></strong></p>
                                 <small class = "no-padding no-margin"><?php echo $user->email ?></small>
-                                <!--<p class = "wrap text-muted" style = "font-size: 12px;"><i><?php echo $user->description ? $user->description : 'Hello World!'; ?></i></p>-->
-                                <?php //feature unavailable - hide buttons 
-                                //echo '<button class = "btn btn-success btn-sm"><i class = "fa fa-phone"></i></button>
-                                //<button class = "btn btn-success btn-sm"><i class = "fa fa-comment"></i></button>' ?>
                             </div>
                             <?php if ($logged_user->user_id === $user->user_id): ?>
                                 <div class = "col-xs-2 no-padding" style = "margin-top: 20px;">
@@ -101,74 +97,7 @@ include(APPPATH . 'views/modals/change_password_and_email_modal.php');
                                 <p>ebooks</p>
                             </div>
                         </div>
-<!--                        <div class = "col-sm-4 no-left-right-pad"style = "border-right: 1px solid #E0E0E0; border-left: 1px solid #E0E0E0;">
-                            <div class = "col-xs-12 text-center no-left-right-pad">
-                                <h2 class = "text-info no-margin"><strong><?php echo $user->vote_points; ?></strong></h2>
-                                <p>Points</p>
-                            </div>
-                        </div>
-                        <div class = "col-sm-4 no-left-right-pad">
-                            <div class = "col-xs-12 text-center no-left-right-pad">
-                                <h2 class = "text-info no-margin"><strong><?php echo $user->post_count; ?></strong></h2>
-                                <p>Posts</p>
-                            </div>
-                        </div>-->
                     </div>
-
-                    <!-- User Activities -->
-<!--                    <div class = "col-md-12 user-topic-container">
-                        <h3 class = "text-info text-center user-activities-header modalbg"><strong class="textoutliner">Activities of <?php echo $user->first_name; ?></strong></h3>
-                        <div class = "col-sm-12 user-activities-div">
-                             POST PREVIEW 
-                            <?php foreach ($user->activities as $post): ?> 
-                                <div class = "col-xs-12 no-padding post-container" style = "margin-bottom: 10px;">
-                                    <div class = "user-post-heading no-margin">
-                                        <a class = "btn btn-link no-padding text1color" href = "<?php echo base_url('user/profile/' . $post->user_id); ?>">
-                                            <strong style = "font-size: 21px"><?php echo $post->first_name . " " . $post->last_name; ?></strong>
-                                        </a> 
-                                        <?php if (empty($post->parent)): ?>
-                                            <span>posted in</span> 
-                                        <?php else: ?>
-                                            <span>commented in</span> 
-                                        <?php endif; ?>
-                                        <a class = "btn btn-link no-padding text1color" href = "<?php echo base_url('topic/view/' . $post->topic_id); ?>">
-                                            <strong style = "font-size: 22px"><?php echo utf8_decode($post->topic_name); ?></strong>
-                                        </a>
-                                        <?php if (!empty($post->parent)): ?>
-                                            <span class = "text-muted" style = "font-size: 18px;">( <i class = "fa fa-reply"></i> <i>in reply to <a class = "btn btn-link btn-xs no-padding no-margin text1color" href = "<?php echo base_url('user/profile/' . $post->parent->user->user_id); ?>"><?php echo $post->parent->user->first_name . " " . $post->parent->user->last_name; ?></a> )</i></span>
-                                        <?php endif; ?>
-                                        :
-                                    </div>
-                                    <div class = "col-xs-12 user-post-content no-padding">
-                                        <div class = "col-xs-2 text-center no-padding" style = "padding-left: 10px;">
-                                            <img width = "60px" height = "60px" class = "img-circle" style = "margin: 10px 5px;" src = "<?php echo $user->profile_url ? base_url($user->profile_url) : base_url('images/default.jpg'); ?>"/>
-                                        </div>
-                                        <div class = "col-xs-10 no-padding" style = "margin-top: 5px;">
-                                            <?php if (!empty($post->post_title)): ?>
-                                                <h5 class = "no-padding no-margin text-muted wrap"><strong style = "font-size: 21px"><?php echo utf8_decode($post->post_title); ?></strong></h5>
-                                                <i class = "text-muted">
-                                                    <small>
-                                                        <a class = "btn btn-link btn-xs no-padding text1color" href = "<?php echo base_url('user/profile/' . $post->user_id); ?>">
-                                                            <?php echo $post->first_name . " " . $post->last_name ?>
-                                                        </a>
-                                                    </small>
-                                                </i>
-                                            <?php else: ?>
-                                            <strong style = "font-size: 21px" class="text1color"><?php echo $post->first_name . " " . $post->last_name; ?></strong>
-
-                                            <?php endif; ?>
-                                            <span class = "text-muted pull-right"> <i style = "font-size: 18px;padding-right: 10px"><?php echo date("F d, Y", strtotime($post->date_posted)); ?></i></span>
-                                            <p class = "home-content-body" style = "border-right: none;white-space: pre-wrap;"><?php echo utf8_decode($post->post_content); ?></p>
-
-                                        </div>
-                                    </div>
-                                    <div class = "user-post-footer no-margin text-right">
-                                        <a class = "btn btn-user-post-footer no-up-down-pad" href = "<?php echo base_url('topic/thread/' . $post->root_id); ?>">View Post <i class = "fa fa-chevron-right"></i></a>
-                                    </div>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>-->
                 </div>
             </div>
         </div>

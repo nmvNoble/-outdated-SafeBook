@@ -11,13 +11,6 @@ include(APPPATH . 'views/header.php');
     ?>
     
     <!-- CODE HERE -->
-<!--    <div class="well well-sm">
-        <strong>Display</strong>
-        <div class="btn-group">
-            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
-            </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
-                class="glyphicon glyphicon-th"></span>Grid</a>
-        </div>-->
     </div>
 
     <div class = "container page">
@@ -26,45 +19,7 @@ include(APPPATH . 'views/header.php');
                 <div class = "col-md-12 home-container">
                     <!-- HEADER -->
                     <div class = "clearfix content-container" style="border-radius:20px;">
-<!--                        <a class="text1color" href = "<?php echo base_url('user/profile/' . $logged_user->user_id); ?>">
-                            <img class = "pull-left img-rounded btn btn-link home-prof-pic" src = "<?php echo $logged_user->profile_url ? base_url($logged_user->profile_url) : base_url('images/default.jpg') ?>">
-                        </a>-->
 
-<!--                        <div class = "col-sm-4 home-user-text">
-                            <a href = "<?php echo base_url('user/profile/' . $logged_user->user_id); ?>" class = "btn btn-link home-username text1color"><strong><?php echo $logged_user->first_name; ?></strong></a>
-                            <i class = "fa fa-caret-right header-arrow"></i> 
-                            <div class="home-dropdown dropdown">
-                                <button class="btn btn-link dropdown-toggle home-username text1color" type="button" data-toggle="dropdown"><strong>Topic</strong>
-                                    <i class="caret"></i></button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="home">Home</a></li>
-                                    <li><a href="topic">Topic</a></li>
-                                </ul>
-                            </div>
-                        </div>-->
-<center><a id="crettop" class ="btn btn-primary buttonsbgcolor textoutliner" href="#create-topic-modal" data-toggle = "modal"><i class = "fa fa-pencil"></i> Publish an ebook</a>
-</center>
-                    </div>
-                </div>
-
-                <div class = "col-md-12 content-container" style="border-radius:20px;display:none">
-                    <form action = "javascript:void(0);" role="search">
-                        <div class="input-group" style = "width: 100%">
-                            <input type="text" class="form-control search-text" placeholder="&#xF002; Search for a topic" id = "search-topic-list">
-                        </div>
-                    </form>
-                </div>
-                <div class = "col-md-12 content-container" style="border-radius:20px;">
-<!--                    <div id = "sort-dropdown" class = "dropdown text-muted" style="font-size: 22px">
-                        Sort Topics by: <br>
-                        <button id = "chosen-sort" class="btn btn-gray dropdown-toggle" type="button" data-toggle="dropdown"><strong style="font-size: 20px"><i class = "fa fa-clock-o"></i> Date Created</strong>
-                            <i class="caret"></i></button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" data-value = "1"><i class = "fa fa-clock-o"></i> Date Created</a></li>
-                            <li><a href="#" data-value = "2"><i class = "fa fa-group"></i> Follower Count</a></li>
-                            <li><a href="#" data-value = "3"><i class = "fa fa-comments"></i> Post Count</a></li>
-                        </ul>
-                    </div>-->
                     <div id = "topic-list" class = "list-group">
                         <?php foreach ($topics as $topic): ?>
                         
@@ -78,7 +33,6 @@ include(APPPATH . 'views/header.php');
                         $result = $conn->query($sql);
                         while ($row = $result->fetch_assoc()) {
                         echo '<img src=" '.$row['file_url'].' " width = "100%" height="230px" style="position:relative;" />';
-//                        echo '<span  style="font-size: 32px">'. $topic->topic_name .'<img src=" '.$row['file_url'].' " /></span>';
                         $conn->close();
                         }?>
 

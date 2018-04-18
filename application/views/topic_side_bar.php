@@ -19,24 +19,11 @@ include(APPPATH . 'views/modals/ebook_details_modal.php');
                         
                         <div class = "col-sm-4 home-user-text">
                             <div class = "home-username text1color"><strong><?php echo $logged_user->first_name . " " . $logged_user->last_name;?></strong></div>
-
-<!--                            <i class = "fa fa-caret-right header-arrow"></i> 
-                            <div class="home-dropdown dropdown">
-                                <button class="btn btn-link dropdown-toggle home-username text1color" type="button" data-toggle="dropdown"><strong>Home</strong>
-                                    <i class="caret"></i></button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="home">Home</a></li>
-                                    <li><a href="topic">Topic</a></li>
-                                </ul>
-                            </div>-->
                         </div>
                         </a>
  </div>
         <div id = "side-topics-followed">
-        <!--<h3 class = "text-center text-info no-padding no-margin text1color" style = "margin-bottom: 10px;"><strong>Topic Shortcuts</strong></h3>-->
-        <!--<a id = "side-topics-created-btn" class = "btn btn-sm btn-block no-padding sidebar-header-btn buttonsbgcolor">-->
             <h4 class="ptopcolor textoutliner" style="border-radius: 2px;color: white">Your ebooks</h4>
-        <!--</a>-->
         <div class = "sidebar-topic-div">
             <ul class="nav">
                 <?php

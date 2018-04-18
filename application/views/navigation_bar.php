@@ -29,7 +29,6 @@ $unanswered = $logged_user->unanswered_invites + $logged_user->unanswered_reques
                     <span class="icon-bar"></span> 
                 </button>
                 <a id ="logom" class = "draggable navbar-brand" href = "<?php echo base_url('topic') ?>" style="font-weight: bold;color: white;font-size: 24px !important;">Safebook</a>
-
             </div>
             <div class = "collapse navbar-collapse" id = "nav-collapse">
                 <div class = "nav-left-end">
@@ -40,42 +39,26 @@ $unanswered = $logged_user->unanswered_invites + $logged_user->unanswered_reques
                                 <button class="btn btn-default search-btn tooltip1" type="submit">
                                     <i class="glyphicon glyphicon-search buttonsgo" style="cursor: pointer"></i><span class="tooltiptext1" style="width:150px;">Start search</span>
                                 </button>
-                                </div>
+                            </div>
                         </span>
-
-                        
                     </form>
                 </div>
 
-                            <div class="navbaricons2">
-                            <a onclick="window.speechSynthesis.cancel();" id="logout-btn" class="navbaricons" href="<?php echo base_url('signin/logout'); ?>" style="margin-right:4%;"><i class = "glyphicon glyphicon-log-out iconin"></i>Logout
-                                </a>
-
-<!--                            <a class="navbaricons" href="#customize-theme" data-toggle = "modal">
-                                        <i class = "fa fa-paint-brush iconin"></i>Colors
-                                <span class="tooltiptext">Change the colors of the site!</span>
-                            </a>-->
-                                    </a>
-                            
-<!--                            <a class="navbaricons" id = "notif-btn" href="#notif-modal" data-toggle = "modal" <?php echo (int) $logged_user->unread_notifs > 0 ? "data-value = \"" . $logged_user->unread_notifs . "\"" : "" ?>>
-                                    <?php if ((int) $logged_user->unread_notifs > 0): ?>
-                                    <span id = "notif-badge" class = "badge" style="float:right;background: red;"><?php echo $logged_user->unread_notifs ?></span>
-                                    <?php endif; ?>    
-                                    <i class = "glyphicon glyphicon-exclamation-sign iconin"></i>News    
-                                <span class="tooltiptext">You can check your notifications here!</span>  
-                            </a>-->
-                            <div class="vl"  style="margin-right:0.3%;"></div>
- 
-                                <a class="navbaricons" href="<?php echo base_url('topic') ?>"><strong class="iconin"><i class = "glyphicon glyphicon-list iconin"></i>ebooks</strong></a>
-                                <?php if ($logged_user->role_id==='1') {?>
-                                <a class="navbaricons" href="<?php echo base_url('home') ?>"><strong class="iconin"><i id="home2" class = "glyphicon glyphicon-home iconin"></i></i>Home</strong></a>
-                                <?php }  ?>
-                               
-                                <div class="navbarprofileicon">
-                                <a class="text1color" style="color: white" href = "<?php echo base_url('user/profile/' . $logged_user->user_id); ?>">
-                                    <img class = "img-circle nav-prof-pic iconin" src = "<?php echo $logged_user->profile_url ? base_url($logged_user->profile_url) : base_url('images/default.jpg') ?>"/> 
-                                    <?php echo $logged_user->first_name; ?></div>
-                                </a>
+                <div class="navbaricons2">
+                    <a onclick="window.speechSynthesis.cancel();" id="logout-btn" class="navbaricons" href="<?php echo base_url('signin/logout'); ?>" style="margin-right:4%;"><i class = "glyphicon glyphicon-log-out iconin"></i>Logout
+                        </a>
+                            </a>
+                    <div class="vl"  style="margin-right:0.3%;"></div>
+                        <a class="navbaricons" href="<?php echo base_url('topic') ?>"><strong class="iconin"><i class = "glyphicon glyphicon-list iconin"></i>ebooks</strong></a>
+                        <?php if ($logged_user->role_id==='1') {?>
+                        <a class="navbaricons" href="<?php echo base_url('home') ?>"><strong class="iconin"><i id="home2" class = "glyphicon glyphicon-home iconin"></i></i>Home</strong></a>
+                        <?php }  ?>
+                       
+                        <div class="navbarprofileicon">
+                        <a class="text1color" style="color: white" href = "<?php echo base_url('user/profile/' . $logged_user->user_id); ?>">
+                            <img class = "img-circle nav-prof-pic iconin" src = "<?php echo $logged_user->profile_url ? base_url($logged_user->profile_url) : base_url('images/default.jpg') ?>"/> 
+                            <?php echo $logged_user->first_name; ?></div>
+                        </a>
 
                 </div>
             </div>
@@ -84,48 +67,6 @@ $unanswered = $logged_user->unanswered_invites + $logged_user->unanswered_reques
 <!-- Nav Bar Script -->
 <script type="text/javascript" src="<?php echo base_url("/js/nav_bar.js"); ?>"></script>
 
-<!--highlighted text reader script-->
-<!--<script>
-var synth = window.speechSynthesis;
-var voices90 = synth.getVoices();
-
-function getSelectionText() { //highlight desired text to read
-    var text = "";
-    if (window.getSelection) {
-        text = window.getSelection().toString();
-    } else if (document.selection && document.selection.type !== "Control") {
-        text = document.selection.createRange().text;
-    }
-    return text;
-}
-
-document.addEventListener('keydown', function(e) {
-  if (e.keyCode === 16) { //press shift to read higlighted text
-    var msg = new SpeechSynthesisUtterance(getSelectionText());
-    msg.voice = voices90[2];
-    synth.speak(msg);
-  }
-  if(e.keyCode === 17){ //press ctrl to stop reading
-     window.speechSynthesis.cancel();
-  }
-});
-
-</script>
-
-read post content reader script
-        <script>
-function readcontent(value) {
-    if(!(speechSynthesis.speaking)){
-    var value2 = value.replace(/`/g, "'");
-    var reader = new SpeechSynthesisUtterance(value2);
-    window.speechSynthesis.speak(reader);
-    }
-    else{
-        window.speechSynthesis.cancel();
-    }
-  }
-
-</script>-->
 <!-- End Nav Bar -->
 
 

@@ -126,7 +126,6 @@ include(APPPATH . 'views/header.php');
 
             // Update the text indicator
             if(val !== "") {
-//                text.innerHTML = "Strength: " + "<strong>" + strength[result.score] + "</strong>" + "<br><span class='feedback'>" + result.feedback.warning + "<br>" + result.feedback.suggestions + "<br></span"; 
                 if(strength[result.score]==='Worst ☹' && password.value.length<8){
                     text.innerHTML = "Strength: " + "<strong style='color:red'>" + strength[result.score] + "</strong>" + "<br><span class='feedback' >" + "Your password is too short! Try using more letters and numbers!" + "<br>" + "<br></span"; 
                     document.getElementById('registeri').style.pointerEvents="none";

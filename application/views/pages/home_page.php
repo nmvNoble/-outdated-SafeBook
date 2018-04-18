@@ -20,52 +20,13 @@ include(APPPATH . 'views/header.php');
         <div class = "row">
             <div class = "col-md-9 home-container">
                 <div class = "col-sm-12 home-container">
-                    <!-- HEADER -->
-<!--                    <div class = "clearfix content-container" style="border-radius:20px;"><center>
-                            
-                        <h1>How are you feeling today?</h1>
-                        <input class="hide23" type="checkbox" title="Happy" name="happy" id="happy">
-                        <label for="happy" class="labelers1 option-happy">Happy</label>
-  
-                        <input class="hide23" type="checkbox" title="Sad" name="sad" id="sad">
-                        <label for="sad" class="labelers1 option-sad">Sad</label>
-  
-                        <input class="hide23" type="checkbox" title="Meh" name="meh" id="meh">
-                        <label for="meh" class="labelers1 option-meh">Meh</label>
-                        
-                        </center></div>-->
                     
                     <div class = "clearfix content-container" style="border-radius:20px;">
                     <center>
                                 <a id="crettop" class ="btn btn-primary buttonsbgcolor textoutliner" href="#create-topic-modal" data-toggle = "modal" style="margin:1%"><i class = "fa fa-pencil iconin"></i> Create Topic</a>
-                                <a id="crettop" class="btn btn-primary buttonsbgcolor textoutliner" href="<?php echo base_url('topic') ?>" style="margin:1%"><i class = "glyphicon glyphicon-list iconin"></i> Go to Topics</a>                   
-                                <!--<a id="crettop" class="btn btn-primary buttonsbgcolor" href="#create-post-modal" data-toggle = "modal">Post to your wall</a>-->
+                                <a id="crettop" class="btn btn-primary buttonsbgcolor textoutliner" href="<?php echo base_url('topic') ?>" style="margin:1%"><i class = "glyphicon glyphicon-list iconin"></i> Go to Topics</a>
                     </center>
                     </div>
-<!--                    <div class = "clearfix content-container" style="border-radius:20px;">
-
-                        <a class="text1color" href = "<?php echo base_url('user/profile/' . $logged_user->user_id); ?>">
-                            <img class = "pull-left img-rounded btn btn-link home-prof-pic" src = "<?php echo $logged_user->profile_url ? base_url($logged_user->profile_url) : base_url('images/default.jpg') ?>">
-                        </a>
-                        <div class = "col-sm-4 home-user-text">
-                            <a class = "btn btn-link home-username text1color" href = "<?php echo base_url('user/profile/' . $logged_user->user_id); ?>"><strong><?php echo $logged_user->first_name; ?></strong></a>
-                            <i class = "fa fa-caret-right header-arrow"></i> 
-                            <div class="home-dropdown dropdown">
-                                <button class="btn btn-link dropdown-toggle home-username text1color" type="button" data-toggle="dropdown"><strong>Home</strong>
-                                    <i class="caret"></i></button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="home">Home</a></li>
-                                    <li><a href="topic">Topic</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        
--->                        
-                        
-<!--                        <a id="crettop" class ="btn btn-primary home-create-btn buttonsbgcolor" href="#create-topic-modal" data-toggle = "modal">Create Topic</a>
-                        <input onclick='responsiveVoice.speak("shush rg");' type='button' id="sel" value='🔊 Play' />
-
-                    </div>-->
 
                     <!-- CONTENT -->
                     <div class = "col-sm-12 content-container" style="border-radius:20px;">
@@ -112,7 +73,6 @@ include(APPPATH . 'views/header.php');
                                                 </i>
                                                 <span class = "text-muted pull-right"> <i style = "font-size: 18px"><?php echo date("F d, Y", strtotime($post->date_posted)); ?></i></span><br>
                                                 <div class="ptopcolor" style="padding-bottom:15px !important;">
-                                                    <!--<h4 class = "no-padding no-margin text-muted wrap whitebg2" style="display:inline-block"><strong><?php echo utf8_decode($post->post_title); ?></strong></h4>-->
                                                 <p class = "home-content-body whitebg2" style = "border-right: none;white-space: pre-wrap;max-width: 714px;"><?php echo utf8_decode($post->post_content); ?></p>
                                                 
                                                 <span class="whitebg2" style="padding-right: 30px !important;">

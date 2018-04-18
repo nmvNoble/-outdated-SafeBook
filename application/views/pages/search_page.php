@@ -11,33 +11,11 @@ include(APPPATH . 'views/header.php');
             <div class = "col-md-offset-2 col-md-8 content-container text-center">
                 <h4 class = "text-muted"><i class = "fa fa-search"></i> Search Results for <i><?php echo $keyword; ?></i></h4>
                 <ul class="nav nav-pills" style = "display: inline-block;">
-                    <!--<li class="active"><a data-toggle = "pill" href="#user-search">Users</a></li>-->
                     <li class="active"><a data-toggle = "pill" href = "#topic-search">ebooks</a></li>
                 </ul>
             </div>
             <div class = "col-md-offset-2 col-md-8 content-container text-center">
                 <div class = "tab-content">
-                    <!-- USERS -->
-<!--                    <div id="user-search" class="tab-pane fade in active">
-                        <div id = "topic-list" class = "list-group">
-                            <?php
-                            if (!empty($users)):
-                                foreach ($users as $user):
-                                    ?>
-                                    <a class = "list-group-item btn btn-link list-entry" href = "user/profile/<?php echo $user->user_id; ?>">
-                                        <img class = "img-circle" width = "45px" height = "45px" src = "<?php echo $user->profile_url ? base_url($user->profile_url) : base_url('images/default.jpg') ?>"/>
-                                        <h4 class = "text-info no-padding no-margin text1color" style = "display: inline-block;"><?php echo $user->first_name . " " . $user->last_name ?></h4>
-                                    </a>
-                                    <?php
-                                endforeach;
-                            else:
-                                ?>
-                                <h3 class = "text-warning">No users were found for <i><?php echo $keyword ?></i></h3>
-                            <?php
-                            endif;
-                            ?>
-                        </div>
-                    </div>-->
 
                     <!-- TOPICS -->
                     <div id="topic-search" class="tab-pane fade in active">
@@ -69,6 +47,4 @@ include(APPPATH . 'views/header.php');
         </div>      
     </div>
 
-    <?php
-  //  include(APPPATH . 'views/chat/chat.php');
     
