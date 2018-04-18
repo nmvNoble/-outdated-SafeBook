@@ -43,11 +43,11 @@
                 endif; ?>
             </ul>
             </div>      
-                         <form method = "post">
+                         <form class = "form-inline" method = "post">
 
                         <div class = "pull-right" style = "padding-top: 10px; padding-right: 10px; padding-bottom: 10px">
                             <div class = "form-group" style = "margin-right: 5px;">
-                                <input style="font-size: 20px" id = "reauth-email" type = "text" required name = "reauth_email" class = "form-control sign-in-field" placeholder = "Email" autocomplete="off"/>
+                                <input style="font-size: 20px" id = "reauth-email" type = "email" required name = "reauth_email" class = "form-control sign-in-field" placeholder = "Email" autocomplete="off"/>
                             </div>
                             <div class = "form-group" style = "margin-right: 5px;">
                                 <input style="font-size: 20px" id = "reauth-password" type = "password" required name = "reauth_password"  class = "form-control sign-in-field" placeholder = "Password" autocomplete="off"/>

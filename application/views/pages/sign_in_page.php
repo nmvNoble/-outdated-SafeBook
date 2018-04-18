@@ -20,7 +20,7 @@ include(APPPATH . 'views/header.php');
                         </div>
                         <div class = "pull-right" style = "padding-top: 10px; padding-right: 10px; padding-bottom: 10px">
                             <div class = "form-group" style = "margin-right: 5px;">
-                                <input style="font-size: 20px" id = "log-in-email" type = "text" required name = "log_in_email" class = "form-control sign-in-field" placeholder = "Email"/>
+                                <input style="font-size: 20px" id = "log-in-email" type = "email" required name = "log_in_email" class = "form-control sign-in-field" placeholder = "Email"/>
                             </div>
                             <div class = "form-group" style = "margin-right: 5px;">
                                 <input style="font-size: 20px" id = "log-in-password" type = "password" required name = "log_in_password"  class = "form-control sign-in-field" placeholder = "Password"/>
@@ -34,14 +34,14 @@ include(APPPATH . 'views/header.php');
                 </div>
                 <div id="forgoti" class="collapse"> 
                 
-                <form class = "form-inline" id = "log-in-form" onsubmit = "return forgot()" method = "post">
+                <form class = "form-inline" method = "post">
                         
                         <div class = "pull-right" style = "padding-top: 10px; padding-right: 10px; padding-bottom: 10px">
                             <div class = "form-group" style = "margin-right: 5px;">Input your email
-                                <input style="font-size: 20px" id = "forgot-email" type = "text" required name = "log_in_email" class = "form-control sign-in-field" placeholder = "Email"/>
+                                <input style="font-size: 20px" id = "forgot-email" type = "email" required name = "forgot_email" class = "form-control sign-in-field" placeholder = "Email"/>
                             </div>
                             <div class = "form-group text-center">
-                                <button type="submit" class="btn btn-primary buttonsgo" href="#forgoti2" data-toggle="collapse" style = "width: 100%;font-size:24px;">Send to email</button>
+                                <button type="submit" class="btn btn-primary buttonsgo" name = "forgotpw" style = "width: 100%;font-size:24px;">Send to email</button>
                             </div>
                         </div>
                     </form>
@@ -166,7 +166,42 @@ include(APPPATH . 'views/header.php');
         });
 </script>    
 
-    <script type="text/javascript" src="<?php echo base_url("/js/sign_in.js"); ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url("/js/sign_in.js"); ?>">
+        <?php 
+    if(isset($_POST['forgotpw'])){
+     $servername = "127.0.0.1";
+	$username = "root";
+	$password = "";
+	$dbname = "safebookbeta";
+	$conn = @new mysqli($servername, $username, $password, $dbname);
+
+        // Create connection
+        // Check connection
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+
+        $theemail = $_POST["forgot_email"];
+        
+                        $sql = "INSERT INTO forgotpw(user_email, date_forgot)
+                        VALUES ('$theemail', CURRENT_TIMESTAMP )";
+                        
+                                if (mysqli_query($conn, $sql)) {
+                                ;
+                                } else {
+                                    ;
+                                }
+
+       echo '<script language="javascript"></script>';
+        echo("We've sent an email. Click the link in the <br>email to reset your password.
+                    If you don't <br>see the email, check other places it might be <br>in your junk, spam, social, or other folders. 
+                    <br>If you still can't find it then the inputted <br>email may not exist.");
+
+
+        mysqli_close($conn);
+    }
+    ?>
+    </script>
 
 </body>
 </html>
