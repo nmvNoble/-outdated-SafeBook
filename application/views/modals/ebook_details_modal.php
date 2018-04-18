@@ -93,9 +93,16 @@
                                     ;
                                 }
                     else:
-                    
                     endif;
                 endforeach;
+                $sqlD = "DELETE FROM tbl_topic_follower
+                        WHERE user_id = '$logged_user->user_id' AND topic_id = '$topic->topic_id'";
+                            if (mysqli_query($conn, $sqlD)) {
+                                ;
+                            } else {
+                                ;
+                            }
+
             else:
             endif; 
         else:
