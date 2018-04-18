@@ -20,6 +20,20 @@ include(APPPATH . 'views/header.php');
                     <!-- HEADER -->
                     <div class = "clearfix content-container" style="border-radius:20px;">
 
+<center><a id="crettop" class ="btn btn-primary buttonsbgcolor textoutliner" href="#create-topic-modal" data-toggle = "modal"><i class = "fa fa-pencil"></i> Publish an ebook</a>
+</center>
+                    </div>
+                </div>
+
+                <div class = "col-md-12 content-container" style="border-radius:20px;display:none">
+                    <form action = "javascript:void(0);" role="search">
+                        <div class="input-group" style = "width: 100%">
+                            <input type="text" class="form-control search-text" placeholder="&#xF002; Search for a topic" id = "search-topic-list">
+                        </div>
+                    </form>
+                </div>
+                <div class = "col-md-12 content-container" style="border-radius:20px;">
+
                     <div id = "topic-list" class = "list-group">
                         <?php foreach ($topics as $topic): ?>
                         
@@ -33,6 +47,7 @@ include(APPPATH . 'views/header.php');
                         $result = $conn->query($sql);
                         while ($row = $result->fetch_assoc()) {
                         echo '<img src=" '.$row['file_url'].' " width = "100%" height="230px" style="position:relative;" />';
+//                        echo '<span  style="font-size: 32px">'. $topic->topic_name .'<img src=" '.$row['file_url'].' " /></span>';
                         $conn->close();
                         }?>
 
