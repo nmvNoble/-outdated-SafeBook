@@ -37,7 +37,7 @@ $logged_user = $_SESSION['logged_user'];
     <link rel="stylesheet" href="<?php echo base_url("assets/vis/vis.css"); ?>" />
 
     <?php
-    include(APPPATH . 'views/modals/network_view_modal.php');
+//    include(APPPATH . 'views/modals/network_view_modal.php');
     ?>
 
 </body>

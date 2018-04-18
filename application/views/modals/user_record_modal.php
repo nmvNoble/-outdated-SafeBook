@@ -28,10 +28,6 @@ include(APPPATH . 'third_party/fusioncharts.php');
                                     <h2 class = "text-info"><strong><?php echo $record->topic_count ?></strong></h2>
                                     <p>Ebooks Published</p>
                                 </div>
-                                <div class = "col-sm-6">
-                                    <h2 class = "text-info"><strong><?php echo $record->followed_topic_count ?></strong></h2>
-                                    <p>Ebooks Owned</p>
-                                </div>
                             </div>
                         </div>
                     </div>

@@ -7,7 +7,6 @@ $logged_user = $_SESSION['logged_user'];
     }
 ?>
 <script src="<?php echo base_url('zxcvbn-master/dist/zxcvbn.js'); ?>"></script>
-<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
 <body class = "sign-in">
     <div id = "admin-page" class = "container" style = "margin-top: 30px;">
         <div class = "row">
@@ -18,7 +17,7 @@ $logged_user = $_SESSION['logged_user'];
             </div>
             
             <div class = "col-md-8 col-md-offset-2 content-container">
-                <!--<a href = "<?php echo base_url('admin/network'); ?>" class = "btn btn-primary btn-block"><i class = "fa fa-globe"></i> View Interaction Network of Safebook</a>-->
+                
                 <a class="navbaricons" href="<?php echo base_url('topic') ?>"><strong class="iconin"><i class = "glyphicon glyphicon-list iconin"></i>ebooks</strong></a>
             </div>
             
@@ -104,6 +103,6 @@ $logged_user = $_SESSION['logged_user'];
     <script type="text/javascript" src="<?php echo base_url("/js/search.js"); ?>"></script>
         <script type="text/javascript" src="<?php echo base_url("/js/sign_in.js"); ?>"></script>
     <?php
-//include(APPPATH . "views/modals/user_record_modal.php");?>
+    include(APPPATH . "views/modals/user_record_modal.php");?>
 </body>
 </html>
