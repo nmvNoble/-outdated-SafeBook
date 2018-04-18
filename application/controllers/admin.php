@@ -9,7 +9,7 @@
 /**
  * Description of admin
  *
- * @author Arces
+ *
  */
 class Admin extends CI_Controller {
 

@@ -9,7 +9,7 @@
 /**
  * Description of search
  *
- * @author Arces
+ *
  */
 class Search extends CI_Controller {
     public function index() {

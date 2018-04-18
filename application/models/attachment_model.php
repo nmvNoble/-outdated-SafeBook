@@ -9,7 +9,7 @@
 /**
  * Description of notification_model
  *
- * @author Arces
+ *
  */
 class Attachment_model extends CI_Model {
 

@@ -9,7 +9,7 @@
 /**
  * Description of topic_model
  *
- * @author Arces
+ *
  */
 class Topic_model extends CI_Model {
 

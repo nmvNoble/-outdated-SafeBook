@@ -61,6 +61,7 @@ $logged_user = $_SESSION['logged_user'];
                     </ul>
                 </div>
             </div>
+
             <div class = "col-md-8 col-md-offset-2 content-container"><h1 class = "sign-in-header" style = "font-size:34px;">Create a New Account</h1>
             <form id = "sign-up-form" onsubmit = "return sign_up()" method = "post">
                                 <div class = "col-xs-10 form-group register-field" style = "font-size:24px;">First name:

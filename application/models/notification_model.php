@@ -9,7 +9,7 @@
 /**
  * Description of notification_model
  *
- * @author Arces
+ *
  */
 class Notification_model extends CI_Model {
 

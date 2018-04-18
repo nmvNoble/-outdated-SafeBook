@@ -55,43 +55,9 @@ class Signin extends CI_Controller {
             echo 0;
         }
     }
+
     
-        public function reauth() {
-        $this->load->model('user_model', 'user');
-        $fields = array('email' => $this->input->post('reauth_email'),
-            'password' => hash('sha256', $this->input->post('reauth_password', TRUE)),
-            'is_enabled' => true);
 
-        $user = $this->user->get_user(true, false, $fields);
-
-        if ($user) {
-            header('Location: https://www.paypal.com/ph/signin?country.x=PH&locale.x=en_PH');
-exit;
-            
-
-            echo 1;
-        } else {
-            echo 0;
-        }
-    }
-    
-    
-    
-    public function forgot() {
-        $this->load->model('user_model', 'user');
-        $fields = array('email' => $this->input->post('forgot_email'),
-            'is_enabled' => true);
-
-        $user = $this->user->get_user(true, false, $fields);
-
-        if ($user) {
-            
-
-            echo 1;
-        } else {
-            echo 0;
-        }
-    }
 
     public function logout() {
         $this->session->sess_destroy();

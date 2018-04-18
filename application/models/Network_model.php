@@ -9,7 +9,7 @@
 /**
  * Description of Network_model
  *
- * @author Arces
+ *
  */
 class Network_model extends CI_Model {
 

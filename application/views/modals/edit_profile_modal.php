@@ -33,29 +33,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class = "col-xs-12 no-padding">
-                            <span class = "text-muted"><strong>Password: </strong></span>
-                        </div>
-                        <div class = "col-sm-12 no-padding" style = "margin-bottom: 10px;">
-                            <div class = "col-xs-6 no-padding">
-                                <div class = "col-xs-12" style = "padding: 2px;">
-                                    <input type = "password" name = "edit_pass" class = "form-control" placeholder = "Password">
-                                </div>
-                            </div>
-                            <div class = "col-xs-6 no-padding">
-                                <div class = "col-xs-12" style = "padding: 2px;">
-                                    <input type = "Password" class = "form-control" placeholder = "Confirm Password">
-                                </div>
-                            </div>
-                        </div>
-                        <div class = "col-sm-12 no-padding" style = "margin-bottom: 10px;">
-                            <div class = "col-xs-2 no-padding" style = "padding-top: 5px;">
-                                <span class = "text-muted"><strong>Email: </strong></span>
-                            </div>
-                            <div class = "col-xs-10 no-padding">    
-                                <input required type = "email" name = "edit_email" maxlength = "45" class = "form-control" placeholder = "Email Address" value = "<?php echo $logged_user->email; ?>">
-                            </div>
-                        </div>
+                        
                         <div class = "col-sm-12 no-padding" style = "margin-bottom: 10px;display:none">
                             <div class = "col-xs-12 no-padding" style = "padding-top: 5px;">
                                 <span class = "text-muted"><strong>Description: </strong></span>

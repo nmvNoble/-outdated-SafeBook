@@ -9,7 +9,7 @@
 /**
  * Description of notifications
  *
- * @author Arces
+ *
  */
 class Notifications extends CI_Controller {
 

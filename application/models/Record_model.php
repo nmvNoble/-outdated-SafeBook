@@ -9,7 +9,7 @@
 /**
  * Description of Record_model
  *
- * @author Arces
+ *
  */
 class Record_model extends CI_Model {
 

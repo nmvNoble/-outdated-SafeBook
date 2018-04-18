@@ -9,7 +9,7 @@
 /**
  * Description of invite
  *
- * @author Arces
+ *
  */
 class Invite extends CI_Controller {
 

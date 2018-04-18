@@ -9,7 +9,7 @@
 /**
  * Description of topic
  *
- * @author Arces
+ *
  */
 class Topic extends CI_Controller {
 

@@ -1,5 +1,6 @@
 <?php
 include(APPPATH . 'views/header.php');
+include(APPPATH . 'views/modals/change_password_and_email_modal.php');
 ?>
 <body>
     <?php
@@ -35,6 +36,7 @@ include(APPPATH . 'views/header.php');
                             <?php if ($logged_user->user_id === $user->user_id): ?>
                                 <div class = "col-xs-2 no-padding" style = "margin-top: 20px;">
                                     <a class = "pull-right btn btn-gray btn-sm" href = "#edit-profile-modal" data-toggle = "modal"><i class = "fa fa-pencil"></i> Edit Profile</a>
+                                    <div class = "pull-right btn btn-gray btn-sm" onclick="$('#changepwe').modal('show');"><i class = "fa fa-pencil"></i> Change Password</div>
                                 </div>
                             <?php endif; ?>
                         </div>

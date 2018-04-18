@@ -9,7 +9,7 @@
 /**
  * Description of upload
  *
- * @author Arces
+ *
  */
 class Upload extends CI_Controller {
 
