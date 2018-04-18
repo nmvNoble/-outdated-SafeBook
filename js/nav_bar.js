@@ -9,13 +9,6 @@ $(document).ready(function() {
         context: document.body
     });
     
-    $("#nav-logo").on("mouseover", function() {
-        $(this).attr('src', window.location.origin + '/SafebookBeta/images/logo/mukhlatlogo on the sideb.png');
-    });
-
-    $("#nav-logo").on("mouseout", function() {
-        $(this).attr('src', window.location.origin + '/SafebookBeta/images/logo/mukhlatlogo on the sideb.png');
-    });
 
     $("#notif-btn").on("click", function() {
         var notif_count = $("#notif-btn").data("value");
