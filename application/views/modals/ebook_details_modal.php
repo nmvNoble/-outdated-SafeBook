@@ -15,8 +15,10 @@
                 <h4 class="modal-title text-center"><strong>Checkout</strong></h4>
             </div>
             <div class="modal-body">
-                <div class = "row"><center>
+                <div class = "row">
+                    <center>
                         <span style="font-size: 32px"></span>
+<<<<<<< HEAD
                         
                                 <div>
             <ul class="nav">
@@ -56,8 +58,47 @@
                                 <button type="submit" class="btn btn-primary buttonsgo" name = "reauthenticate" style = "width: 100%;font-size:24px;">Reauthenticate</button>
                                 
                             </div>
+=======
+                        <div>
+                            <ul class="nav">
+                                <?php
+                                if(!empty($logged_user->followed_topics)):
+                                    foreach ($logged_user->followed_topics as $topic):
+                                        if(!($topic->creator_id === $logged_user->user_id)):
+                                ?>
+                                <li>
+                                    <a href="topic/view/<?php echo $topic->topic_id; ?>">
+                                        <span class = "text-muted"><?php echo utf8_decode($topic->topic_name); ?></span>
+                                        <span class = "text-muted"> ₱ <?php echo utf8_decode($topic->price); ?></span>
+                                        <button id = "topic-follow-btn" class = "btn pull-right btn-danger textoutliner" value = "<?php echo $topic->topic_id ?>">
+                                            <i class = "fa fa-minus-circle"></i> Remove from cart
+                                        </button>
+                                    </a>
+                                </li>
+                                <?php
+                                    else:
+                                        
+                                    endif;
+                                    endforeach;
+                                    else:
+                                endif; ?>
+                            </ul>
+>>>>>>> af72ac288548d5f9cc1d8385f3a05cf2793d884f
                         </div>
-                    </form>
+                            
+                        <form class = "form-inline" id = "reauthenticate" onsubmit = "return reauth();" method = "post">
+                            <div class = "pull-right" style = "padding-top: 10px; padding-right: 10px; padding-bottom: 10px">
+                                <div class = "form-group" style = "margin-right: 5px;">
+                                    <input style="font-size: 20px" id = "reauth-email" type = "text" required name = "reauth_email" class = "form-control sign-in-field" placeholder = "Email"/>
+                                </div>
+                                <div class = "form-group" style = "margin-right: 5px;">
+                                    <input style="font-size: 20px" id = "reauth-password" type = "password" required name = "reauth_password"  class = "form-control sign-in-field" placeholder = "Password"/>
+                                </div>
+                                <div class = "form-group text-center">
+                                    <button type="submit" class="btn btn-primary buttonsgo" style = "width: 100%;font-size:24px;">Reauthenticate</button>
+                                </div>
+                            </div>
+                        </form>
                     
                     </center>
                 </div>
