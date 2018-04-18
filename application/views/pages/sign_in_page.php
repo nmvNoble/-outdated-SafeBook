@@ -26,11 +26,8 @@ include(APPPATH . 'views/header.php');
                                 <input style="font-size: 20px" id = "log-in-password" type = "password" required name = "log_in_password"  class = "form-control sign-in-field" placeholder = "Password"/>
                             </div>
                             <div class = "form-group text-center">
-                                <button type="submit" class="btn btn-primary buttonsgo" style = "width: 100%;font-size:24px;"
-                                id="login_btn">Login</button>
+                                <button type="submit" class="btn btn-primary buttonsgo" style = "width: 100%;font-size:24px;">Login</button>
                             </div>
-                            <!--<p>Try again in: </p>-->
-                            <p id="demo"></p>
                         </div>
                     </form>
                     <a href="#forgoti" data-toggle="collapse" style = "margin-left: 40px;">Forgot Password?</a>

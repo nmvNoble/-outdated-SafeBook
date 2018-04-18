@@ -6,6 +6,8 @@ $logged_user = $_SESSION['logged_user'];
         die();
     }
 ?>
+<script src="<?php echo base_url('zxcvbn-master/dist/zxcvbn.js'); ?>"></script>
+<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
 <body class = "sign-in">
     <div id = "admin-page" class = "container" style = "margin-top: 30px;">
         <div class = "row">
@@ -59,12 +61,47 @@ $logged_user = $_SESSION['logged_user'];
                     </ul>
                 </div>
             </div>
+            <div class = "col-md-8 col-md-offset-2 content-container"><h1 class = "sign-in-header" style = "font-size:34px;">Create a New Account</h1>
+            <form id = "sign-up-form" onsubmit = "return sign_up()" method = "post">
+                                <div class = "col-xs-10 form-group register-field" style = "font-size:24px;">First name:
+                                    <input type = "text" required name = "first_name" class = "form-control sign-in-field" placeholder = "First Name" maxlength = "25">
+                                </div>
+                                <div class = "col-xs-10 form-group register-field" style = "font-size:24px;">Last name:
+                                    <input type = "text" required name = "last_name" class = "form-control sign-in-field" placeholder = "Last Name" maxlength = "25">
+                                </div>
+                                <div class = "col-xs-10 form-group register-field" style = "font-size:24px;">Email address:
+                                    <input type = "email" required name = "sign_up_email" class = "form-control sign-in-field" placeholder = "Email Address" maxlength = "45">
+                                </div>
+                                <div class = "col-xs-7 form-group register-field" style = "font-size:24px;">Birthdate:
+                                    <input type = "date" required name = "sign_up_birthday" class = "form-control sign-in-field" id="birhdate10"><br>
+
+                                </div>
+                                <div class = "col-xs-2 form-group register-field" style = "font-size:24px;">Role
+                                    <select class = "form-control" name = "sign_up_role" style = "font-size:24px;">
+                                        
+                                            <option style = "font-size:24px;" value="1">Administrator</option>
+                                        
+                                    </select>
+                                </div>
+                                <div class = "password-field col-xs-6 form-group register-field" style = "font-size:24px;">Password:
+                                        <input style = "font-size:24px;" id="password1" type = "password" required name = "sign_up_password" class = "form-control sign-in-field sign-up-password" placeholder = "Password" >
+
+                                </div>
+                                <div class = "password-field col-xs-6 form-group register-field" style = "font-size:24px;">Retype password:
+                                    <input style = "font-size:24px;" id = "sign-up-retype" type = "password" required class = "form-control sign-in-field" placeholder = "Retype Password">
+                                </div>
+                                <div class = "text-center">
+                                    <button onclick="window.scrollTo(0, document.body.scrollHeight);" type = "submit" class = "btn btn-success" style="width:100%; font-size:24px;" id="registeri">Register</button>
+                                </div>
+                                
+                            </form>
+                </div>
         </div>
     </div>
 
     <script type="text/javascript" src="<?php echo base_url("/js/admin.js"); ?>"></script>
     <script type="text/javascript" src="<?php echo base_url("/js/search.js"); ?>"></script>
-    
+        <script type="text/javascript" src="<?php echo base_url("/js/sign_in.js"); ?>"></script>
     <?php
 //include(APPPATH . "views/modals/user_record_modal.php");?>
 </body>

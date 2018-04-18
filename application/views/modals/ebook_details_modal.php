@@ -42,19 +42,19 @@
                 else:
                 endif; ?>
             </ul>
-        </div>
-                        
-                         <form class = "form-inline" id = "reauthenticate" onsubmit = "return reauth();" method = "post">
+            </div>      
+                         <form method = "post">
 
                         <div class = "pull-right" style = "padding-top: 10px; padding-right: 10px; padding-bottom: 10px">
                             <div class = "form-group" style = "margin-right: 5px;">
-                                <input style="font-size: 20px" id = "reauth-email" type = "text" required name = "reauth_email" class = "form-control sign-in-field" placeholder = "Email"/>
+                                <input style="font-size: 20px" id = "reauth-email" type = "text" required name = "reauth_email" class = "form-control sign-in-field" placeholder = "Email" autocomplete="off"/>
                             </div>
                             <div class = "form-group" style = "margin-right: 5px;">
-                                <input style="font-size: 20px" id = "reauth-password" type = "password" required name = "reauth_password"  class = "form-control sign-in-field" placeholder = "Password"/>
+                                <input style="font-size: 20px" id = "reauth-password" type = "password" required name = "reauth_password"  class = "form-control sign-in-field" placeholder = "Password" autocomplete="off"/>
                             </div>
                             <div class = "form-group text-center">
-                                <button type="submit" class="btn btn-primary buttonsgo" style = "width: 100%;font-size:24px;">Reauthenticate</button>
+                                <button type="submit" class="btn btn-primary buttonsgo" name = "reauthenticate" style = "width: 100%;font-size:24px;">Reauthenticate</button>
+                                
                             </div>
                         </div>
                     </form>
@@ -65,6 +65,46 @@
         </div>
     </div>
 </div>
+
+    <?php 
+    if(isset($_POST['reauthenticate'])){
+     $servername = "127.0.0.1";
+	$username = "root";
+	$password = "";
+	$dbname = "safebookbeta";
+	$conn = @new mysqli($servername, $username, $password, $dbname);
+        $logged_user->user_id;
+
+        // Create connection
+        // Check connection
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+        if($logged_user->email == $_POST["reauth_email"] && $logged_user->password == hash('sha256', $_POST["reauth_password"])):
+            if(!empty($logged_user->followed_topics)):
+                foreach ($logged_user->followed_topics as $topic):
+
+                    if(!($topic->creator_id === $logged_user->user_id)):
+                        $sql = "INSERT INTO orders(user_id, product_id, date_order)
+                        VALUES ('$logged_user->user_id', '$topic->topic_id', CURRENT_TIMESTAMP )";
+                                if (mysqli_query($conn, $sql)) {
+                                ;
+                                } else {
+                                    ;
+                                }
+                    else:
+                    
+                    endif;
+                endforeach;
+            else:
+            endif; 
+        else:
+        endif;
+
+        mysqli_close($conn);
+    }
+    ?>
+
     <script type="text/javascript" src="<?php echo base_url("/js/sign_in.js"); ?>">
         
     </script>
